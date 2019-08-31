@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/kjwessa/natours-project/issues"
   },
-  "homepage": "https://github.com/kjwessa/natours-project#readme"
+  "homepage": "https://github.com/kjwessa/natours-project#readme",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
 }
