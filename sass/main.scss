@@ -1,11 +1,10 @@
-
 $color-primary: #7ed56f;
 $color-primary-light: #55c57a;
 $color-primary-dark: #28b485;
 
 $color-grey-dark: #777;
 $color-white: #fff;
-$color-red: #c22121;
+$color-black: #000;
 
 
 
@@ -39,28 +38,29 @@ body {
         url(../img/hero.jpg);
     background-size: cover;
     background-position: top;
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     background-attachment: fixed;
     position: relative;
-}
 
-.header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-}
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
-.header__logo {
-    height: 3.5rem;
-    width: auto;
-}
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
 
-.header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    &__logo {
+        height: 3.5rem;
+        width: auto;
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
 }
 
 .heading-primary {
@@ -69,32 +69,34 @@ body {
     /* determines if backpart behind the element is hidden */
     backface-visibility: hidden;
     margin-bottom: 6rem;
-}
 
-.heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
 
-    /*
+        /*
     animation-delay: 3s;
     animation-iteration-count: 3;
     */
+    }
+
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 500;
+        letter-spacing: 1.7rem;
+        animation-name: moveInRight;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+    }
 }
 
-.heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 500;
-    letter-spacing: 1.7rem;
-    animation-name: moveInRight;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-}
+
 
 @keyframes moveInLeft {
     0% {
@@ -145,36 +147,37 @@ body {
 
 }
 
+.btn {
 /* :link is a special case of a selector */
-.btn:link,
-.btn:visited {
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all .3s;
-    font-size: 1.6rem;
-}
+    &:link,
+    &:visited {
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .3s;
+        font-size: 1.6rem;
+    }
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+    }
 
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0,.2);
-}
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+    }
 
-.btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0,.2);
-}
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+    }
 
-.btn--white {
-    background-color: $color-white;
-    color: $color-grey-dark;
-}
-
-.btn--animated {
-    /* animation name, duration, easing, delay */
-    animation: moveInBottom .5s ease-out .75s;
-    /*2. Automatically applies the 0% state BEFORE the animation starts. */
-    animation-fill-mode: backwards;
+    &--animated {
+        /* animation name, duration, easing, delay */
+        animation: moveInBottom .5s ease-out .75s;
+        /*2. Automatically applies the 0% state BEFORE the animation starts. */
+        animation-fill-mode: backwards;
+    }
 }
