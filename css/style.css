@@ -17,7 +17,7 @@ body {
   box-sizing: border-box; }
 
 .heading-primary {
-  color: #fff;
+  color: #fcfcfc;
   text-transform: uppercase;
   /* determines if backpart behind the element is hidden */
   backface-visibility: hidden;
@@ -92,10 +92,10 @@ body {
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
   .btn--white {
-    background-color: #fff;
+    background-color: #fcfcfc;
     color: #777; }
     .btn--white::after {
-      background-color: #fff; }
+      background-color: #fcfcfc; }
   .btn--animated {
     /* animation name, duration, easing, delay */
     animation: moveInBottom .5s ease-out .75s;
@@ -124,3 +124,33 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center; }
+
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    /*without the not, it would select the last child, but NOT selects everything BUT that last-child */
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    background-color: orangered;
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    /* calc lets you do mathematical operations within css, 100% width - gutter horizontal divided by two, but in sass you have to put it in curly braces and use the # */
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
