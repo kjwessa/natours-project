@@ -7,7 +7,7 @@
         url(../img/hero.jpg);
     background-size: cover;
     background-position: top;
-    background-attachment: fixed;
+    //background-attachment: fixed;
     position: relative;
 
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
@@ -20,7 +20,7 @@
 
     &__logo {
         height: 3.5rem;
-        width: auto;
+        //width: auto;
     }
 
     &__text-box {
