@@ -90,6 +90,9 @@ body {
 .u-center-text {
   text-align: center; }
 
+.u-margin-bottom-8 {
+  margin-bottom: 8rem; }
+
 .btn {
   /* :link is a special case of a selector */ }
   .btn:link, .btn:visited {
@@ -142,7 +145,6 @@ body {
 
 .row {
   max-width: 114rem;
-  background-color: #eee;
   margin: 0 auto; }
   .row:not(:last-child) {
     /*without the not, it would select the last child, but NOT selects everything BUT that last-child */
@@ -152,7 +154,6 @@ body {
     display: table;
     clear: both; }
   .row [class^="col-"] {
-    background-color: orangered;
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
