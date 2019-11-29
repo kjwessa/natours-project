@@ -30,3 +30,22 @@
     position: relative;
     padding: 15rem 0;
 }
+
+.section-book {
+    padding: 15rem 0;
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+}
+
+.book {
+    //complicated color gradient, works by setting the degrees first to determine the shape, then the first color rgba profile (with percentages for how far it goes because you can set it to blend or be solid based on how many profiles you set), then the final color, and to have a harsh line, the percentage should match the percentage of the first color. This serves as an alternative for clip-path properties.
+    background-image: linear-gradient(100deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 50%, transparent 50%),url(/img/nat-10.jpg);
+    background-size: cover;
+    height: 50rem;
+    border-radius: $small-radius;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+    
+    &__form {
+        width: 50%;
+        padding: 6rem;
+    }
+}
