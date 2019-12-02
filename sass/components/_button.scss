@@ -1,6 +1,10 @@
 .btn {
-
+    
+    
+    
     /* :link is a special case of a selector */
+    //the simple & allows it work for the form button, because it's not a normal button
+    &,
     &:link,
     &:visited {
         text-decoration: none;
@@ -12,6 +16,8 @@
         font-size: $default-font-size;
     }
 
+   
+    
     &:hover {
         transform: translateY(-3px);
         box-shadow: 0 1rem 2rem rgba($color-black, .2);
@@ -21,7 +27,9 @@
         }
     }
 
-    &:active {
+    &:active,
+    &:focus {
+        outline: none;
         transform: translateY(-1px);
         box-shadow: 0 .5rem 1rem rgba($color-black, .2);
     }
