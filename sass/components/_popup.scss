@@ -5,6 +5,10 @@
     top: 0;
     left: 0;
     background-color: rgba($color-black, .8);
+    //use opacity vs the display property because we can't animate it
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
 
     &__content {
         @include absCenter;
@@ -16,6 +20,9 @@
 
         //we use the display:table option as floats would work for the left container, but not the right, because it wouldn't give the right the same height. 
         display: table;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.25);
+        transition: all .5s .2s ease;
     }
 
     &__left {
@@ -44,10 +51,42 @@
         //default is 1em, which in this case is 14px because of the font-size
         column-gap: 4rem;
         column-rule: 1px solid $color-grey-light-2;
-        
+
         -moz-hyphens: auto;
         -ms-hyphens: auto;
         -webkit-hyphens: auto;
         hyphens: auto;
+    }
+
+    //the target is for the element ID we placed on the section that when it's clicked, it opens up the popup functionality for booking.
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:target &__content {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+
+    &__close {
+
+        &:link,
+        &:visited {
+            color: $color-grey-dark;
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+            line-height: 1rem;
+        }
+
+        &:hover {
+            color: $color-primary;
+        }
     }
 }
