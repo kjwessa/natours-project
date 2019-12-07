@@ -1,3 +1,19 @@
+/*
+0 -600px PHONE
+600 - 900px: Tablet Portrait
+900 - 1200px: Tablet Landscape
+[1200 - 1800]: Where normal styles apply
+1800px: Big Desktop
+*/
+/*
+
+$breakpoint arguement choices:
+- phone 
+- tab-port
+- tab-land
+- big-desktop
+
+*/
 *,
 *::after,
 *::before {
@@ -7,6 +23,21 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 600px) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 900px) {
+    html {
+      font-size: 60%; } }
+  @media (max-width: 1200px) {
+    html {
+      font-size: 70%; } }
+  @media (min-width: 1800px) {
+    html {
+      font-size: 80%; } }
+
+body {
+  box-sizing: border-box; }
 
 body {
   font-family: "Lato", sans-serif;
@@ -50,6 +81,7 @@ body {
   display: inline-block;
   background-image: linear-gradient(to right, #55c57a, #28b485);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   letter-spacing: .2rem;
   transition: all .2s; }
@@ -303,6 +335,7 @@ body {
     display: inline-block;
     background-image: linear-gradient(to right, #55c57a, #28b485);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent; }
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.03); }
@@ -601,8 +634,7 @@ body {
     border-top: 1px solid #777;
     padding-top: 2rem;
     display: inline-block;
-    width: 80%;
-    float: right; }
+    width: 80%; }
 
 .navigation__checkbox {
   display: none; }

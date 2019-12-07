@@ -50,6 +50,7 @@ body {
     // background clip is only where the text is
     -webkit-background-clip: text;
     // after background clip, make the text transparent
+    background-clip: text;
     color: transparent;
     letter-spacing: .2rem;
     transition: all .2s;

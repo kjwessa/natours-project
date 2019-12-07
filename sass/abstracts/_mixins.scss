@@ -13,3 +13,49 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+
+// Media Query Manager
+
+/*
+0 -600px PHONE
+600 - 900px: Tablet Portrait
+900 - 1200px: Tablet Landscape
+[1200 - 1800]: Where normal styles apply
+1800px: Big Desktop
+*/
+
+// This allows us to pass a block of code into the mixin, found in the base.scss doc
+
+
+/*
+
+$breakpoint arguement choices:
+- phone 
+- tab-port
+- tab-land
+- big-desktop
+
+*/
+
+@mixin respond-phone {
+    @media (max-width: 600px) { @content };
+}
+
+@mixin respond($breakpoint) {
+@if $breakpoint == phone {
+    @media (max-width: 600px) { @content };
+}
+
+@if $breakpoint == tab-port {
+    @media (max-width: 900px) { @content };
+}
+
+@if $breakpoint == tab-land {
+    @media (max-width: 1200px) { @content };
+}
+
+@if $breakpoint == big-desktop {
+    @media (min-width: 1800px) { @content };
+}
+}
