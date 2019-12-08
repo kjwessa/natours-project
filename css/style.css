@@ -13,6 +13,31 @@ $breakpoint arguement choices:
 - tab-land
 - big-desktop
 
+1em = 16px
+
+*/
+/* rems fail to work as intended in some browsers, and ems are the best options for media queries
+
+Conversion from pixels to ems (and not rems because some browsers fail to recognize them). We're making the conversion because if someone were to change their font size in the browser, pixels would not be the best option for them (as the pixels stay the same, but the font size is different).
+
+@mixin respond($breakpoint) {
+@if $breakpoint == phone {
+    @media (max-width: 600px) { @content };
+}
+
+@if $breakpoint == tab-port {
+    @media (max-width: 900px) { @content };
+}
+
+@if $breakpoint == tab-land {
+    @media (max-width: 1200px) { @content };
+}
+
+@if $breakpoint == big-desktop {
+    @media (min-width: 1800px) { @content };
+}
+}
+
 */
 *,
 *::after,
@@ -22,19 +47,23 @@ $breakpoint arguement choices:
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
-  @media (max-width: 600px) {
+  font-size: 62.5%;
+  /* unncessary as long as the tab-port is the same size
+    
+    @include respond(phone) {
+        font-size: 50%;
+    }
+    
+    */ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
     html {
       font-size: 50%; } }
-  @media (max-width: 900px) {
+  @media (min-width: 112.5em) {
     html {
-      font-size: 60%; } }
-  @media (max-width: 1200px) {
-    html {
-      font-size: 70%; } }
-  @media (min-width: 1800px) {
-    html {
-      font-size: 80%; } }
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }

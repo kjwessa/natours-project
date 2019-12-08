@@ -7,23 +7,29 @@
 }
 
 html {
-    // this defines what 1rem is
-    font-size: 62.5%;
+    // this defines what 1rem is, which is used throughout the document, converted to ems for the media queries (so you'll see the change in the style.css doc
 
+    font-size: 62.5%; //1rem = 10px; 10px/16px = 62.5%
+
+    /* unncessary as long as the tab-port is the same size
+    
     @include respond(phone) {
         font-size: 50%;
     }
+    
+    */
 
-    @include respond(tab-port) {
-        font-size: 60%;
+
+    @include respond(tab-land) { // applies less than 900px
+        font-size: 56.25%; //target is 9px so 1rem = 9px, 9/16 = 56.25%
     }
 
-    @include respond(tab-land) {
-        font-size: 70%;
+    @include respond(tab-port) { // applies less than 600px and overrides tab-land because it appears last
+        font-size: 50%; //target is 8px so 1rem = 8px, 8/16 = 50%
     }
 
     @include respond(big-desktop) {
-        font-size: 80%;
+        font-size: 75%; //target is 12px so 1rem = 12px, 12/16 = 75%
     }
 }
 
