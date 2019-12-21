@@ -57,13 +57,38 @@
 .book {
     //complicated color gradient, works by setting the degrees first to determine the shape, then the first color rgba profile (with percentages for how far it goes because you can set it to blend or be solid based on how many profiles you set), then the final color, and to have a harsh line, the percentage should match the percentage of the first color. This serves as an alternative for clip-path properties.
     background-image: linear-gradient(100deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 50%, transparent 50%),url(/img/nat-10.jpg);
-    background-size: cover;
-    height: 50rem;
+    background-size: 100%;
     border-radius: $small-radius;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
-    
+
+    @include respond(tab-land) {
+        background-image: linear-gradient(105deg, 
+        rgba($color-white, .9) 0%, 
+        rgba($color-white, .9) 65%, 
+        transparent 65%),
+        url(/img/nat-10.jpg);
+        background-size: cover;
+    }
+
+    @include respond(tab-port) {
+        background-image: linear-gradient(to right, 
+        rgba($color-white, .9) 0%, 
+        rgba($color-white, .9) 100%),
+        url(/img/nat-10.jpg);
+        background-size: cover;
+    }
+
     &__form {
         width: 50%;
         padding: 6rem;
+
+        @include respond(tab-land) {
+            width: 75%;
+        }
+        
+        @include respond(tab-port) {
+            width: 100%;
+            padding: 3rem;
+        }
     }
 }
