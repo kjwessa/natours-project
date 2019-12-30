@@ -13,14 +13,8 @@
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
     //the min-resolution targets high resolution screen, and can be combined with a second rule that makes sure a 2000px image is NOT used on super small (but high density) screens.
-    @media (min-resolution: 192dpi) and (min-width: 600px) {
-        background-image: linear-gradient(to right bottom,
-            rgba($color-primary-light, 0.8),
-            rgba($color-primary-dark, 0.8)),
-        url(../img/hero.jpg);
-    }
-
-    @media (min-width: 2000px) {
+    @media (min-resolution: 192dpi) and (min-width: 37.5em), 
+    (min-width: 125em) {
         background-image: linear-gradient(to right bottom,
             rgba($color-primary-light, 0.8),
             rgba($color-primary-dark, 0.8)),
