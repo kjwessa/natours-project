@@ -1,6 +1,6 @@
 /* Header */
 .header {
-    height: 95vh;
+    height: 85vh;
     background-image: linear-gradient(to right bottom,
             rgba($color-primary-light, 0.8),
             rgba($color-primary-dark, 0.8)),
@@ -9,12 +9,17 @@
     background-position: top;
     //background-attachment: fixed;
     position: relative;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        height: 95vh;
+    }
 
     //the min-resolution targets high resolution screen, and can be combined with a second rule that makes sure a 2000px image is NOT used on super small (but high density) screens.
     @media (min-resolution: 192dpi) and (min-width: 37.5em), 
-    (min-width: 125em) {
+           (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+           (min-width: 125em) {
         background-image: linear-gradient(to right bottom,
             rgba($color-primary-light, 0.8),
             rgba($color-primary-dark, 0.8)),
