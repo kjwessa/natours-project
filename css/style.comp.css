@@ -187,28 +187,28 @@ body {
     transform: translateX(0); } }
 
 .u-center-text {
-  text-align: center !important; }
+  text-align: center; }
 
 .u-margin-bottom-small {
-  margin-bottom: 1.5rem !important; }
+  margin-bottom: 1.5rem; }
 
 .u-margin-bottom-medium {
-  margin-bottom: 4rem !important; }
+  margin-bottom: 4rem; }
   @media only screen and (max-width: 56.25em) {
     .u-margin-bottom-medium {
-      margin-bottom: 3rem !important; } }
+      margin-bottom: 3rem; } }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem !important; }
+  margin-bottom: 8rem; }
   @media only screen and (max-width: 56.25em) {
     .u-margin-bottom-big {
-      margin-bottom: 5rem !important; } }
+      margin-bottom: 5rem; } }
 
 .u-margin-top-big {
-  margin-bottom: 8rem !important; }
+  margin-bottom: 8rem; }
 
 .u-margin-top-huge {
-  margin-bottom: 10rem !important; }
+  margin-bottom: 10rem; }
 
 .btn {
   /* :link is a special case of a selector */ }
