@@ -13,12 +13,12 @@
 }
 
 [data-icon]:before {
-  font-family: "linea-basic-10" !important;
+  font-family: "linea-basic-10";
   content: attr(data-icon);
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   speak: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
@@ -27,11 +27,11 @@
 
 [class^="icon-basic"]:before,
 [class*=" icon-basic"]:before {
-  font-family: "linea-basic-10" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
+  font-family: "linea-basic-10";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   speak: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
