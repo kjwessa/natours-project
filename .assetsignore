@@ -1,0 +1,30 @@
+# Source files (not needed in deployed assets)
+sass/
+*.scss
+
+# Build configuration files
+vite.config.js
+package.json
+package-lock.json
+tsconfig.json
+
+# Development files
+node_modules/
+.git/
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.*

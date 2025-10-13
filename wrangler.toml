@@ -1,0 +1,17 @@
+# Name of your Worker - matches your project name
+name = "natours"
+
+# Compatibility date - set to current date
+compatibility_date = "2025-04-01"
+
+# Static assets configuration
+[assets]
+# Root directory contains all your static files (Vite build output)
+directory = "./dist"
+
+# Handle HTML files for clean URLs (removes .html extension)
+# This gives you /about instead of /about.html
+html_handling = "auto-trailing-slash"
+
+# Enable workers.dev subdomain for preview
+workers_dev = true
