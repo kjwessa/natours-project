@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .form {
     &__group:not(:last-child) {
         margin-bottom: 2rem;

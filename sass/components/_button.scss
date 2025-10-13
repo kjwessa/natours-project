@@ -1,4 +1,6 @@
-.btn {    
+@use '../abstracts' as *;
+
+.btn {
     /* :link is a special case of a selector */
     //the simple & allows it work for the form button, because it's not a normal button
     &,

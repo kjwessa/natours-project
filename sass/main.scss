@@ -1,29 +1,30 @@
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/variables";
+// Import abstracts with wildcard to make variables/mixins available globally
+@use "abstracts" as *;
 
+// Base styles
+@use "base/base";
+@use "base/typography";
+@use "base/animations";
+@use "base/utilities";
 
-@import "base/base";
-@import "base/typography";
-@import "base/animations";
-@import "base/utilities";
+// Components
+@use "components/button";
+@use "components/card";
+@use "components/composition";
+@use "components/feature-box";
+@use "components/story";
+@use "components/bg-video";
+@use "components/form";
+@use "components/popup";
 
-@import "components/button";
-@import "components/card";
-@import "components/composition";
-@import "components/feature-box";
-@import "components/story";
-@import "components/bg-video";
-@import "components/form";
-@import "components/popup";
+// Layout
+@use "layout/header";
+@use "layout/grid";
+@use "layout/footer";
+@use "layout/navigation";
 
-
-@import "layout/header";
-@import "layout/grid";
-@import "layout/footer";
-@import "layout/navigation";
-
-@import "pages/home";
+// Pages
+@use "pages/home";
 
 
 
