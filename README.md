@@ -16,18 +16,20 @@ A modern, fully responsive marketing site for a fictional outdoor adventure comp
 
 - **Vite 7** - Next-generation frontend tooling with instant HMR
 - **Sass (Modern Module System)** - Using `@use`/`@forward` for better encapsulation
-- **sass-embedded** - Fast Dart Sass implementation
+- **sass-embedded** - Fast Dart Sass implementation (replaces deprecated node-sass)
 - **PostCSS + Autoprefixer** - Automatic vendor prefixing
 - **Biome** - Fast linter and formatter for JavaScript/TypeScript
-- **pnpm** - Fast, disk space efficient package manager
-- **Cloudflare Workers** - Edge deployment with Workers Static Assets
+- **pnpm@10.18.1** - Fast, disk space efficient package manager
+- **Cloudflare Pages/Workers** - Edge deployment with Workers Static Assets
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18 or later recommended)
-- [pnpm](https://pnpm.io/) (recommended) or npm
+- [Node.js](https://nodejs.org/) (v22 or later recommended)
+- [pnpm](https://pnpm.io/) v10.18.1 or compatible (required for consistent builds)
+
+> **Note:** This project uses pnpm as specified in the `packageManager` field. Using npm or yarn may cause dependency conflicts.
 
 ### Installation
 
@@ -75,7 +77,14 @@ pnpm preview
 
 ### Deployment
 
-Deploy to Cloudflare Workers:
+This project is configured for deployment to **Cloudflare Pages**:
+
+- Deployments are triggered automatically on git push
+- Build command: `pnpm build`
+- Output directory: `dist`
+- The `packageManager` field ensures Cloudflare Pages uses pnpm (not npm)
+
+For manual deployments using Cloudflare Workers:
 
 ```bash
 wrangler deploy
