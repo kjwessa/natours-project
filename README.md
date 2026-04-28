@@ -19,7 +19,7 @@ A modern, fully responsive marketing site for a fictional outdoor adventure comp
 - **sass-embedded** - Fast Dart Sass implementation (replaces deprecated node-sass)
 - **PostCSS + Autoprefixer** - Automatic vendor prefixing
 - **Biome** - Fast linter and formatter for JavaScript/TypeScript
-- **pnpm@10.18.1** - Fast, disk space efficient package manager
+- **Bun 1.3.11** - Fast package manager and script runner
 - **Cloudflare Pages/Workers** - Edge deployment with Workers Static Assets
 
 ## Getting Started
@@ -27,14 +27,14 @@ A modern, fully responsive marketing site for a fictional outdoor adventure comp
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) (v22 or later recommended)
-- [pnpm](https://pnpm.io/) v10.18.1 or compatible (required for consistent builds)
+- [Bun](https://bun.sh/) v1.3.11 or compatible (required for consistent installs)
 
-> **Note:** This project uses pnpm as specified in the `packageManager` field. Using npm or yarn may cause dependency conflicts.
+> **Note:** This project uses Bun as specified in the `packageManager` field. Using npm, pnpm, or yarn may produce a different dependency graph.
 
 ### Installation
 
 ```bash
-pnpm install
+bun install
 ```
 
 ### Development
@@ -42,7 +42,7 @@ pnpm install
 Start the Vite dev server with hot module replacement:
 
 ```bash
-pnpm dev
+bun run dev
 ```
 
 The site will open automatically at `http://localhost:5173` with instant hot reload.
@@ -52,13 +52,13 @@ The site will open automatically at `http://localhost:5173` with instant hot rel
 Check code for issues:
 
 ```bash
-pnpm check
+bun run check
 ```
 
 Auto-fix issues:
 
 ```bash
-pnpm fix
+bun run fix
 ```
 
 ### Production Build
@@ -66,13 +66,13 @@ pnpm fix
 Build optimized static assets for production:
 
 ```bash
-pnpm build
+bun run build
 ```
 
 Preview the production build locally:
 
 ```bash
-pnpm preview
+bun run preview
 ```
 
 ### Deployment
@@ -80,9 +80,10 @@ pnpm preview
 This project is configured for deployment to **Cloudflare Pages**:
 
 - Deployments are triggered automatically on git push
-- Build command: `pnpm build`
+- Install command: `bun install`
+- Build command: `bun run build`
 - Output directory: `dist`
-- The `packageManager` field ensures Cloudflare Pages uses pnpm (not npm)
+- The `packageManager` field ensures Cloudflare Pages uses Bun for dependency installation
 
 For manual deployments using Cloudflare Workers:
 
@@ -113,6 +114,7 @@ The site will be deployed to Cloudflare's global edge network with automatic SSL
 ├── vite.config.js         # Vite configuration
 ├── postcss.config.js      # PostCSS configuration
 ├── biome.json             # Biome linter/formatter config
+├── bun.lock               # Bun dependency lockfile
 └── package.json           # Project dependencies and scripts
 ```
 
