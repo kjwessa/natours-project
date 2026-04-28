@@ -13,7 +13,7 @@
 }
 
 [data-icon]:before {
-	font-family: "linea-basic-10";
+	font-family: "linea-basic-10", sans-serif;
 	content: attr(data-icon);
 	font-style: normal;
 	font-weight: normal;
@@ -27,7 +27,7 @@
 
 [class^="icon-basic"]:before,
 [class*=" icon-basic"]:before {
-	font-family: "linea-basic-10";
+	font-family: "linea-basic-10", sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;

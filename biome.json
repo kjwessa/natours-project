@@ -7,7 +7,8 @@
 			"!**/dist",
 			"!**/.git",
 			"!**/*.min.js",
-			"!**/pnpm-lock.yaml"
+			"!css/style*.css",
+			"!**/bun.lock"
 		]
 	}
 }
